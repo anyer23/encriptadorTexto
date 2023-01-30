@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" scr="script.js">
+
+        //e --> enter
+        //o --> ober
+        //i --> imes
+        //a --> ai
+        //u --> ufat
+
+        function encriptar(){
+          var texto=document.getElementById("inputTexto").value.toLowerCase();
+        //i es para que afecte mayusculas como minusculas
+        //g es toda la linea u oracion
+        //m es para que afecte multiples lineas
+          var txtCifrado=texto.replace(/e/igm,"enter");
+          var txtCifrado=txtCifrado.replace(/o/igm,"ober");
+          var txtCifrado=txtCifrado.replace(/i/igm,"imes");
+          var txtCifrado=txtCifrado.replace(/a/igm,"ai");
+          var txtCifrado=txtCifrado.replace(/u/igm,"ufat");
+
+          document.getElementById("imgDere").style.display="none";
+          document.getElementById("texto").style.display="none";
+          document.getElementById("texto2").innerHTML=txtCifrado;
+          document.getElementById("copiar").style.display="show";
+          document.getElementById("copiar").style.display="inherit";
+        }
+
+        function desencriptar(){
+          var texto=document.getElementById("inputTexto").value.toLowerCase();
+        //i es para que afecte mayusculas como minusculas
+        //g es toda la linea u oracion
+        //m es para que afecte multiples lineas
+          var txtCifrado=texto.replace(/enter/igm,"e");
+          var txtCifrado=txtCifrado.replace(/ober/igm,"o");
+          var txtCifrado=txtCifrado.replace(/imes/igm,"i");
+          var txtCifrado=txtCifrado.replace(/ai/igm,"a");
+          var txtCifrado=txtCifrado.replace(/ufat/igm,"u");
+
+          document.getElementById("imgDere").style.display="none";
+          document.getElementById("texto").style.display="none";
+          document.getElementById("texto2").innerHTML=txtCifrado;
+          document.getElementById("copiar").style.display="show";
+          document.getElementById("copiar").style.display="inherit";
+        }
+
+        function Copiar(){
+          var contenido= document.querySelector("#texto2");
+          contenido.select();
+          document.execCommand("copy");
+          alert("¡El mensaje se copio!")
+        }
+
+
+        </script>
+        <title>Encriptador Challenge</title>
+    </head>
+
+    <body>
+        <div  class="container">
+       <div class="logo">
+              <img  class="logoimg" rc="img/logo.png" alt="">
+              <h1 class="title">Encriptador de texto</h1>
+
+        </div>
+
+            <div class="left">
+                <input class="text-input" id="inputTexto" type="text" placeholder="Ingrese el texto aquí">
+            </div>
+
+            <div class="right">
+              <img src="img/busca.png" id="imgDere" >
+              <h1 id="texto">Ningun mensaje fue encontrado</h1>
+              <textarea id="texto2" name="name" rows="8" cols="80">Ingrese el texto que desees encriptar o desencriptar</textarea>
+              <button id="copiar" type="button" name="button" onclick="Copiar()">¡Copiar!</button>
+            </div>
+
+            <div class="left-button">
+                <p class="letras">Solo minusculas y sin acentos</p>
+                <button onclick="encriptar()" type="button" id="btn-encriptar" >Encriptar</button>
+                <button type="button" id="btn-desencriptar" onclick="desencriptar()">Desencriptar</button>
+            </div>
+        </div>
+
+    </body>
+    <footer>
+        <div class="container-footer">
+
+        <div class="redes">
+
+              <a  href="https://www.linkedin.com/in/reyna-hern%C3%A1ndez-monterrubio-b0285516b" target="_blank" class="fa fa-linkedin"><img src="img/linkedin.png" alt="" class="img-footer"></a>.
+
+        </div>
+        <hr>
+        <h3>@2023 Reyna Hernandez Monterrubio</h3>
+
+
+
+      </div>
+    </footer>
+
+
+</html>
